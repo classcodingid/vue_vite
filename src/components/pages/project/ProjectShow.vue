@@ -19,8 +19,8 @@
 <!-- logic -->
 <script>
 import axios from 'axios';
-import LayoutDiv from '../LayoutDiv.vue';
 import Swal from 'sweetalert2'
+import LayoutDiv from '../../LayoutDiv.vue';
 
 export default {
     name: 'ProjectShow',
