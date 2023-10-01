@@ -15,6 +15,9 @@
                     </div>
                 </nav>
                 <h2 class="text-center mt-5">Welcome, {{ user?.name }}!</h2>
+                <p>
+                    <router-link to="/project">project</router-link>
+                </p>
             </div>
         </div>
     </layout-div>

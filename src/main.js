@@ -6,6 +6,8 @@ import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
 import { createRouter, createWebHistory } from "vue-router";
 
+//home
+import HelloWorld from "./components/HelloWorld.vue";
 //auth
 import LoginPage from "./components/pages/auth/LoginPage.vue";
 import RegisterPage from "./components/pages/auth/RegisterPage.vue";
@@ -31,12 +33,13 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     // login
+    { path: "/", component: HelloWorld },
     { path: "/login", component: LoginPage },
     { path: "/register", component: RegisterPage },
     // dashboard
     { path: "/dashboard", component: DashboardPage },
     // project
-    { path: "/", component: ProjectList },
+    { path: "/project", component: ProjectList },
     { path: "/create", component: ProjectCreate },
     { path: "/edit/:id", component: ProjectEdit },
     { path: "/show/:id", component: ProjectShow },

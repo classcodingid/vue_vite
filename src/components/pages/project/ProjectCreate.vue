@@ -45,7 +45,25 @@ export default {
             isSaving: false,
         };
     },
+    created() {
+        this.getUser();
+        if (localStorage.getItem('token') == "" || localStorage.getItem('token') == null) {
+            this.$router.push('/')
+        } else {
+            this.getUser();
+        }
+    },
     methods: {
+        getUser() {
+            axios.get('/api/user', { headers: { Authorization: 'Bearer ' + localStorage.getItem('token') } })
+                .then((r) => {
+                    this.user = r.data;
+                    return r
+                })
+                .catch((e) => {
+                    return e
+                });
+        },
         handleSave() {
             this.isSaving = true
             axios.post('/api/projects', this.project)
